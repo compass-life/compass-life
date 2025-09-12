@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>生活介護 こんぱすらいふ</title>
+  <meta name="description" content="大阪市平野区の生活介護事業所『こんぱすらいふ』の公式サイト。看護師常駐・送迎・入浴支援・昼食無料。">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="container nav">
+  <div class="brand">
+    <div class="logo-dot" aria-hidden="true"></div>
+    <div class="brand-text">
+      <strong>生活介護 こんぱすらいふ</strong>
+      <span>運営：株式会社さんまる</span>
+    </div>
+  </div>
+  <nav class="links">
+    <a href="#about">こんぱすらいふとは</a>
+    <a href="#features">特徴</a>
+    <a href="#services">サービス</a>
+    <a href="#day">一日の流れ</a>
+    <a href="#access">アクセス</a>
+    <a href="#contact">お問合せ</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>誰もがその人らしく挑戦し、決めつけず、排除せず、違いをまるごと抱きしめる居場所。</h1>
+    <p class="sub">大阪市平野区加美北六丁目3-3 / 営業日：月〜金 / 利用時間：10:00〜16:00</p>
+    <div class="cta">
+      <a class="btn" href="tel:0667186305">☎ 06-6718-6305</a>
+      <a class="btn outline" href="tel:08079699856">携帯 080-7969-9856</a>
+      <!-- メール公開時のみ表示したい場合は script.js のロジックで切替 --> 
+      <a id="emailBtn" class="btn" href="#" style="display:none;">✉ メール</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section id="about" class="container section">
+    <div class="grid-2">
+      <div>
+        <h2>こんぱすらいふとは</h2>
+        <p>障がいのある方が、安心して日中を過ごしながら、楽しみ・挑戦・つながりを育む生活介護事業所です。利用者さん一人ひとりのペースに寄り添い、「できる・できた」を積み重ねていきます。</p>
+        <ul class="list">
+          <li>対象：18歳以上（区分等はご相談ください）</li>
+          <li>スタッフ体制：看護師・生活支援員 等</li>
+        </ul>
+      </div>
+      <div class="ph placeholder" aria-hidden="true">写真（外観/室内）</div>
+    </div>
+  </section>
+
+  <section id="features" class="section tone">
+    <div class="container">
+      <h2>特徴</h2>
+      <div id="featuresList" class="cards"></div>
+    </div>
+  </section>
+
+  <section id="services" class="container section">
+    <h2>サービス</h2>
+    <div id="servicesList" class="grid-2"></div>
+  </section>
+
+  <section id="day" class="section tone">
+    <div class="container">
+      <h2>一日の流れ（例）</h2>
+      <div id="dayFlow" class="timeline"></div>
+    </div>
+  </section>
+
+  <section id="access" class="container section">
+    <h2>アクセス</h2>
+    <p>大阪市平野区加美北六丁目3-3</p>
+    <div class="map-wrap">
+      <iframe title="map" src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%B9%B3%E9%87%8E%E5%8C%BA%E5%8A%A0%E7%BE%8E%E5%8C%97%E5%85%AD%E4%B8%81%E7%9B%AE3-3&output=embed" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section id="contact" class="section tone">
+    <div class="container">
+      <h2>お問合せ</h2>
+      <p>見学・ご相談はお気軽にご連絡ください。シンプル設計：電話・メールのみ。</p>
+      <div class="grid-2">
+        <a class="card" href="tel:0667186305">代表番号：06-6718-6305</a>
+        <a class="card" href="tel:08079699856">携帯：080-7969-9856</a>
+        <a id="emailCard" class="card" href="#" style="display:none;"></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> 生活介護 こんぱすらいふ. 運営：株式会社さんまる</p>
+    <p class="sub">写真・個人情報の掲載は同意をいただいた範囲で行っています。</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

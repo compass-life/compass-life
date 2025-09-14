@@ -2,7 +2,6 @@
   const res = await fetch('site-data.json');
   const site = await res.json();
 
-  // Features
   const featuresEl = document.getElementById('featuresList');
   if (featuresEl && Array.isArray(site.features)) {
     site.features.forEach(f => {
@@ -13,7 +12,6 @@
     });
   }
 
-  // Services
   const servicesEl = document.getElementById('servicesList');
   if (servicesEl && Array.isArray(site.services)) {
     site.services.forEach(s => {
@@ -24,7 +22,6 @@
     });
   }
 
-  // Day Flow
   const dayEl = document.getElementById('dayFlow');
   if (dayEl && Array.isArray(site.dayFlow)) {
     site.dayFlow.forEach(d => {
@@ -35,19 +32,16 @@
     });
   }
 
-  // Capacity & Acceptance
   const cap = document.getElementById('capacitySlot');
   const acc = document.getElementById('acceptanceSlot');
   if (cap && site.capacity) cap.textContent = site.capacity;
   if (acc && site.acceptance) acc.textContent = site.acceptance;
 
-  // Guide (cost, visit)
   const cost = document.getElementById('costSlot');
   const visit = document.getElementById('visitSlot');
   if (cost && site.guide && site.guide.cost) cost.textContent = site.guide.cost;
   if (visit && site.guide && site.guide.visit) visit.textContent = site.guide.visit;
 
-  // Email buttons (show only if email is provided)
   const email = (site.email || '').trim();
   if (email) {
     const btn = document.getElementById('emailBtn');
@@ -56,16 +50,16 @@
     if (card){ card.style.display = 'inline-block'; card.href = `mailto:${email}`; card.textContent = `メール：${email}`; }
   }
 
-  // Voice slider (simple auto-rotate)
   const slides = document.querySelectorAll('#voiceSlider .slide');
-  let idx = 0;
-  setInterval(() => {
-    slides[idx].classList.remove('active');
-    idx = (idx + 1) % slides.length;
-    slides[idx].classList.add('active');
-  }, 4000);
+  if (slides.length) {
+    let idx = 0;
+    setInterval(() => {
+      slides[idx].classList.remove('active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('active');
+    }, 4000);
+  }
 
-  // Footer year
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();

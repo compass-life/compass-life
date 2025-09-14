@@ -4,104 +4,156 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>生活介護 こんぱすらいふ</title>
-  <meta name="description" content="大阪市平野区の生活介護事業所『こんぱすらいふ』の公式サイト。看護師常駐・送迎・入浴支援・昼食無料。">
+  <meta name="description" content="大阪市平野区の生活介護事業所『こんぱすらいふ』。看護師常駐・送迎・入浴支援・昼食無料。かわいらしい色使いで見やすいサイト。">
   <link rel="icon" href="assets/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Kosugi+Maru&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="container nav">
-  <div class="brand">
-    <div class="logo-dot" aria-hidden="true"></div>
-    <div class="brand-text">
-      <strong>生活介護 こんぱすらいふ</strong>
-      <span>運営：株式会社さんまる</span>
+<a class="sticky-cta" href="#contact">見学・お問い合わせ</a>
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <img src="assets/logo-bubble.svg" alt="" class="brand-icon" />
+      <div class="brand-name">
+        <strong>生活介護 こんぱすらいふ</strong>
+        <span>運営：株式会社さんまる</span>
+      </div>
     </div>
+    <input id="menuToggle" type="checkbox" class="menu-toggle" aria-label="Menu">
+    <label class="hamburger" for="menuToggle"><span></span></label>
+    <nav class="links">
+      <a href="#about">はじめての方へ</a>
+      <a href="#features">特徴</a>
+      <a href="#services">サービス</a>
+      <a href="#day">1日の流れ</a>
+      <a href="#guide">利用案内</a>
+      <a href="#access">アクセス</a>
+      <a href="#contact">お問合せ</a>
+    </nav>
   </div>
-  <nav class="links">
-    <a href="#about">こんぱすらいふとは</a>
-    <a href="#features">特徴</a>
-    <a href="#services">サービス</a>
-    <a href="#day">一日の流れ</a>
-    <a href="#access">アクセス</a>
-    <a href="#contact">お問合せ</a>
-  </nav>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>誰もがその人らしく挑戦し、決めつけず、排除せず、違いをまるごと抱きしめる居場所。</h1>
-    <p class="sub">大阪市平野区加美北六丁目3-3 / 営業日：月〜金 / 利用時間：10:00〜16:00</p>
-    <div class="cta">
-      <a class="btn" href="tel:0667186305">☎ 06-6718-6305</a>
-      <a class="btn outline" href="tel:08079699856">携帯 080-7969-9856</a>
-      <!-- メール公開時のみ表示したい場合は script.js のロジックで切替 --> 
-      <a id="emailBtn" class="btn" href="#" style="display:none;">✉ メール</a>
+  <div class="decor decor-1"></div>
+  <div class="decor decor-2"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>笑顔がつづく、色とりどりの毎日を。</h1>
+      <p class="lead">大阪市平野区加美北六丁目3-3 / 営業日：月〜金 / 利用時間：10:00〜16:00</p>
+      <div class="cta-row">
+        <a class="pill pill-blue" href="tel:0667186305">☎ 06-6718-6305</a>
+        <a class="pill pill-green" href="tel:08079699856">携帯 080-7969-9856</a>
+        <a id="emailBtn" class="pill pill-pink" href="#" style="display:none;">✉ メール</a>
+      </div>
+    </div>
+    <div class="hero-illus">
+      <img src="assets/hero-illus.svg" alt="やさしいイラスト" />
     </div>
   </div>
 </section>
 
 <main>
-  <section id="about" class="container section">
-    <div class="grid-2">
-      <div>
-        <h2>こんぱすらいふとは</h2>
-        <p>障がいのある方が、安心して日中を過ごしながら、楽しみ・挑戦・つながりを育む生活介護事業所です。利用者さん一人ひとりのペースに寄り添い、「できる・できた」を積み重ねていきます。</p>
-        <ul class="list">
-          <li>対象：18歳以上（区分等はご相談ください）</li>
-          <li>スタッフ体制：看護師・生活支援員 等</li>
-        </ul>
+  <section id="about" class="section section-sky">
+    <div class="container">
+      <h2>はじめての方へ</h2>
+      <div class="grid-2">
+        <div>
+          <p>安心して日中を過ごし、楽しみと挑戦を重ねる居場所です。個々のペースに寄り添い、笑顔の「できた」を増やします。</p>
+          <ul class="list">
+            <li>対象：18歳以上（区分はご相談ください）</li>
+            <li>スタッフ体制：看護師・生活支援員 等</li>
+            <li id="capacitySlot"></li>
+            <li id="acceptanceSlot"></li>
+          </ul>
+        </div>
+        <div class="photo-grid placeholder">
+          写真（外観/室内/活動）
+        </div>
       </div>
-      <div class="ph placeholder" aria-hidden="true">写真（外観/室内）</div>
     </div>
   </section>
 
-  <section id="features" class="section tone">
+  <section id="features" class="section section-cream">
     <div class="container">
-      <h2>特徴</h2>
-      <div id="featuresList" class="cards"></div>
+      <h2>こんぱすらいふの特徴</h2>
+      <div id="featuresList" class="cards colorful"></div>
     </div>
   </section>
 
-  <section id="services" class="container section">
-    <h2>サービス</h2>
-    <div id="servicesList" class="grid-2"></div>
-  </section>
-
-  <section id="day" class="section tone">
+  <section id="services" class="section section-mint">
     <div class="container">
-      <h2>一日の流れ（例）</h2>
-      <div id="dayFlow" class="timeline"></div>
+      <h2>サービス</h2>
+      <div id="servicesList" class="cards colorful"></div>
     </div>
   </section>
 
-  <section id="access" class="container section">
-    <h2>アクセス</h2>
-    <p>大阪市平野区加美北六丁目3-3</p>
-    <div class="map-wrap">
-      <iframe title="map" src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%B9%B3%E9%87%8E%E5%8C%BA%E5%8A%A0%E7%BE%8E%E5%8C%97%E5%85%AD%E4%B8%81%E7%9B%AE3-3&output=embed" loading="lazy"></iframe>
+  <section id="day" class="section section-lav">
+    <div class="container">
+      <h2>1日の流れ</h2>
+      <div id="dayFlow" class="timeline colorful"></div>
     </div>
   </section>
 
-  <section id="contact" class="section tone">
+  <section id="voice" class="section section-rose">
+    <div class="container">
+      <h2>ご家族の声</h2>
+      <div class="slider" id="voiceSlider">
+        <div class="slide active">「落ち着いて過ごせるようになりました」</div>
+        <div class="slide">「体調や気持ちを見てくれるので安心です」</div>
+        <div class="slide">「活動の写真で日々の様子がよくわかります」</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="section section-lime">
+    <div class="container">
+      <h2>利用案内</h2>
+      <ul class="list big">
+        <li id="costSlot"></li>
+        <li>送迎：あり</li>
+        <li id="visitSlot"></li>
+      </ul>
+      <div class="faq">
+        <details>
+          <summary>見学はいつできますか？</summary>
+          <p>平日10:00〜16:00の間で調整します。お問い合わせください。</p>
+        </details>
+        <details>
+          <summary>医療的ケアの相談は？</summary>
+          <p>看護師常駐です。必要に応じて個別に相談・連携します。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="access" class="section section-sky">
+    <div class="container">
+      <h2>アクセス</h2>
+      <p>大阪市平野区加美北六丁目3-3</p>
+      <div class="map-wrap">
+        <iframe title="map" src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E5%B9%B3%E9%87%8E%E5%8C%BA%E5%8A%A0%E7%BE%8E%E5%8C%97%E5%85%AD%E4%B8%81%E7%9B%AE3-3&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-cream">
     <div class="container">
       <h2>お問合せ</h2>
-      <p>見学・ご相談はお気軽にご連絡ください。シンプル設計：電話・メールのみ。</p>
-      <div class="grid-2">
-        <a class="card" href="tel:0667186305">代表番号：06-6718-6305</a>
-        <a class="card" href="tel:08079699856">携帯：080-7969-9856</a>
-        <a id="emailCard" class="card" href="#" style="display:none;"></a>
+      <p>見学・ご相談はお気軽にどうぞ。</p>
+      <div class="contact-grid">
+        <a class="pill pill-blue" href="tel:0667186305">代表：06-6718-6305</a>
+        <a class="pill pill-green" href="tel:08079699856">携帯：080-7969-9856</a>
+        <a id="emailCard" class="pill pill-pink" href="#" style="display:none;"></a>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container">
+  <div class="container foot-inner">
     <p>© <span id="year"></span> 生活介護 こんぱすらいふ. 運営：株式会社さんまる</p>
-    <p class="sub">写真・個人情報の掲載は同意をいただいた範囲で行っています。</p>
+    <a class="foot-cta" href="#contact">資料請求・お問い合わせ</a>
   </div>
 </footer>
 

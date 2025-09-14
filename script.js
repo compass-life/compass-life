@@ -1,4 +1,3 @@
-// Auto-fill content from site-data.json so edits are centralized.
 (async () => {
   const res = await fetch('site-data.json');
   const site = await res.json();
@@ -20,7 +19,7 @@
     site.services.forEach(s => {
       const wrap = document.createElement('div');
       wrap.className = 'card';
-      wrap.innerHTML = `<h3 style="margin:0 0 6px;font-size:18px;">${s.title}</h3><p style="margin:0;color:#374151;line-height:1.8;">${s.desc}</p>`;
+      wrap.innerHTML = `<h3 style="margin:0 0 6px;font-size:18px;font-family:'M PLUS Rounded 1c',sans-serif">${s.title}</h3><p style="margin:0;color:#374151;line-height:1.9;">${s.desc}</p>`;
       servicesEl.appendChild(wrap);
     });
   }
@@ -31,10 +30,22 @@
     site.dayFlow.forEach(d => {
       const row = document.createElement('div');
       row.className = 'row';
-      row.innerHTML = `<strong style="font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace">${d.time}</strong><span>${d.what}</span>`;
+      row.innerHTML = `<strong>${d.time}</strong><span>${d.what}</span>`;
       dayEl.appendChild(row);
     });
   }
+
+  // Capacity & Acceptance
+  const cap = document.getElementById('capacitySlot');
+  const acc = document.getElementById('acceptanceSlot');
+  if (cap && site.capacity) cap.textContent = site.capacity;
+  if (acc && site.acceptance) acc.textContent = site.acceptance;
+
+  // Guide (cost, visit)
+  const cost = document.getElementById('costSlot');
+  const visit = document.getElementById('visitSlot');
+  if (cost && site.guide && site.guide.cost) cost.textContent = site.guide.cost;
+  if (visit && site.guide && site.guide.visit) visit.textContent = site.guide.visit;
 
   // Email buttons (show only if email is provided)
   const email = (site.email || '').trim();
@@ -42,8 +53,17 @@
     const btn = document.getElementById('emailBtn');
     const card = document.getElementById('emailCard');
     if (btn){ btn.style.display = 'inline-block'; btn.href = `mailto:${email}`; btn.textContent = '✉ メール'; }
-    if (card){ card.style.display = 'block'; card.href = `mailto:${email}`; card.textContent = `メール：${email}`; }
+    if (card){ card.style.display = 'inline-block'; card.href = `mailto:${email}`; card.textContent = `メール：${email}`; }
   }
+
+  // Voice slider (simple auto-rotate)
+  const slides = document.querySelectorAll('#voiceSlider .slide');
+  let idx = 0;
+  setInterval(() => {
+    slides[idx].classList.remove('active');
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add('active');
+  }, 4000);
 
   // Footer year
   const year = document.getElementById('year');
